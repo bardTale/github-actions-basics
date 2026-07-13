@@ -24,9 +24,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
     steps:
-      run: echo "Deploying application..."
-      run: echo "Restarting server..."
+      - name: Deploy
+        run: |
+          echo "Deploying application..."
+          echo "Restarting server..."
 
