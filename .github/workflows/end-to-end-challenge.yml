@@ -11,3 +11,17 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm test
+
+  build:
+    needs: ci
+    - uses: docker/login-action@v2
+    - uses: docker/build-push-action@v4
+
+  deploy:
+    needs: build
+    permissions:
+      packages: write
+
+    run: echo "Deploying application..."
+    run: echo "Restarting server..."
+
