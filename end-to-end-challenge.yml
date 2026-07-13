@@ -1,0 +1,22 @@
+name: End to End challenge
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+steps:
+  - name: Test task ci
+    run: echo "Ececuting task ci"
+
+  - name: Setup Node.js
+    uses: actions/setup-node@v3
+    with:
+      node-version: 16
+
+
+  - name: Install dependencies
+    run: npm install
+
+  - name: Run tests
+    run: npm test
