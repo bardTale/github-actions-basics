@@ -29,7 +29,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}/app:latest
+          tags: ghcr.io/${{ github.repository | downcase }}/app:latest
+#          tags: ghcr.io/${{ github.repository }}/app:latest
 
   deploy:
     needs: build
